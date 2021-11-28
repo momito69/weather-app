@@ -4,7 +4,10 @@ const messages = {
         message: {
             placeholder: 'Please enter a city',
             title: "Forecast Weather App",
-            description: "Application to see the forecast weather"
+            description: "Application to see the forecast weather",
+            weather: {
+                error: "There's no data available for the moment"
+            }
         }
     }
 }

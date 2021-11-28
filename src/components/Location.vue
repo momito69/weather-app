@@ -116,38 +116,39 @@ export default {
   }
 }
 </script>
-<style scoped lang="scss">
+<style scoped>
 .autocomplete {
   position: relative;
+}
 
-  .autocomplete-results {
-    margin: 0;
-    height: auto;
-    display: block;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    width: 100%;
-    padding: 0 15px;
-    top: 38px;
+.autocomplete-results {
+  margin: 0;
+  height: auto;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  padding: 0 15px;
+  top: 38px;
+}
 
-    .autocomplete-result {
-      list-style: none;
-      text-align: left;
-      padding: 5px;
-      cursor: pointer;
-      background: white;
-      border-left: 1px solid #eee;
-      float: left;
-      width: 100%;
-      border-right: 1px solid #eee;
-      border-bottom: 1px solid #eee;
+.autocomplete-result {
+  list-style: none;
+  text-align: left;
+  padding: 5px;
+  cursor: pointer;
+  background: white;
+  border-left: 1px solid #eee;
+  float: left;
+  width: 100%;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
 
-      &.is-active, &:hover {
-        background-color: #4AAE9B;
-        color: white;
-      }
-    }
-  }
+.autocomplete-result.is-active,
+.autocomplete-result:hover {
+  background-color: #4AAE9B;
+  color: white;
 }
 </style>

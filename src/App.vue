@@ -8,25 +8,25 @@
     </div>
     <div class="row mt-5">
       <div class="col-12">
-        <Location />
+        <LocationComponent />
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12">
+        <WeatherComponent />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Location from './components/Location.vue'
-
+import WeatherComponent from "./components/Weather"
+import LocationComponent from "./components/Location";
 export default {
   name: 'App',
   components: {
-    Location
-  },
-  created() {
-    this.$store.dispatch('weather/fetchWeather', this.$store.state.location);
-  },
-  computed: {
-
+    LocationComponent,
+    WeatherComponent
   }
 }
 </script>

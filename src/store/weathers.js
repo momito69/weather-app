@@ -15,9 +15,6 @@ export default {
         error(state) {
             return state.error;
         },
-        hasWeather(state) {
-            return state.weathers.length > 0;
-        },
         weathers: state => {
             return state.weathers
         }
@@ -31,7 +28,7 @@ export default {
         ['FETCHING_WEATHERS_SUCCESS'](state, weathers) {
             state.isLoading = false;
             state.error = null;
-            state.weathers = weathers;
+            state.weathers = weathers.consolidated_weather
         },
         ['FETCHING_WEATHERS_ERROR'](state, error) {
             state.isLoading = false;
@@ -40,7 +37,7 @@ export default {
         },
     },
     actions: {
-        async fetchWeather({commit}, location) {
+        async fetchWeathers({commit}, location) {
             commit('FETCHING_WEATHERS');
             const url = `${process.env.VUE_APP_API_URL}${location.id}`
             fetch(url)
