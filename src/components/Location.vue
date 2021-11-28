@@ -77,6 +77,7 @@ export default {
     setLocation(location) {
       this.location = location
       this.isOpen = false
+      this.$store.dispatch("weathers/fetchWeathers", this.location)
     },
     onArrowDown() {
       if (this.arrowCounter < this.locations.length) {
@@ -89,9 +90,12 @@ export default {
       }
     },
     onEnter() {
-      this.location = this.locations[this.arrowCounter]
-      this.isOpen = false
-      this.arrowCounter = -1
+      if(this.locations[this.arrowCounter]){
+        this.location = this.locations[this.arrowCounter]
+        this.isOpen = false
+        this.arrowCounter = -1
+        this.$store.dispatch("weathers/fetchWeathers", this.location)
+      }
     },
     handleClickOutside(evt) {
       if (!this.$el.contains(evt.target)) {
