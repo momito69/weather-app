@@ -11,12 +11,12 @@
         v-for="(weather, index) in weathers"
         :key="index"
         class="col">
+      <h5 class="card-text">{{ moment(weather.applicable_date).format("ddd MMM DD") }}</h5>
       <img :src="getImage(weather.weather_state_abbr)" class="img-fluid" alt=""/>
       <div class="card-body">
-        <h5 class="card-title">{{ weather.state_name }}</h5>
-        <p class="card-text">{{ moment(weather.applicable_date).format("ddd MMM DD, YYYY") }}</p>
-        <p class="card-text">Min Temp: {{ Math.round(weather.min_temp) }}</p>
-        <p class="card-text">Max Temp: {{ Math.round(weather.max_temp) }}</p>
+        <h5 class="card-title">{{ weather.weather_state_name }}</h5>
+        <p class="card-text alert alert-primary">Min Temp: {{ Math.round(weather.min_temp) }}°C</p>
+        <p class="card-text alert alert-danger">Max Temp: {{ Math.round(weather.max_temp) }}°C</p>
       </div>
     </div>
   </div>
