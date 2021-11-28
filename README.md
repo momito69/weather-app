@@ -22,10 +22,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
-## Start Project
-
-```
-npm run serve
-```
-and then go to : [http://localhost:8081/](http://localhost:8081/)

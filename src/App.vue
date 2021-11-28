@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-12">
+        <Location />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Location from './components/Location.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Location
+  },
+  created() {
+    this.$store.dispatch('weather/fetchWeather', this.$store.state.location);
+  },
+  computed: {
+
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
