@@ -1,14 +1,16 @@
 import {createI18n} from 'vue-i18n'
 const messages = {
-    fr: {
+    en: {
         message: {
-            placeholder: 'Veuillez saisir une ville'
+            placeholder: 'Please enter a city',
+            title: "Forecast Weather App",
+            description: "Application to see the forecast weather"
         }
     }
 }
 
 export default createI18n({
-    locale: 'fr',
+    locale: 'en',
     fallbackLocale: 'en',
     messages
 })
